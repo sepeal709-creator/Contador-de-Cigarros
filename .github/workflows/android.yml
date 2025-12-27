@@ -24,7 +24,7 @@ jobs:
           pip3 install buildozer cython==0.29.36
 
       - name: Build APK
-        run: |
+        run: yes |
           buildozer -v android debug
 
       - name: Upload APK
