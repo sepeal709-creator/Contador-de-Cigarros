@@ -10,6 +10,7 @@ Control de Cigarros — Kivy + SQLite (OFFLINE)
 import sqlite3
 import time
 from datetime import datetime, timedelta, date
+from pathlib import Path
 
 from kivy.app import App
 from kivy.clock import Clock
@@ -302,7 +303,9 @@ class StatsScreen(Screen):
 class ControlDeCigarrosApp(App):
     def build(self):
         self.title = "Control de Cigarros"
-        self.store = Store(DB_NAME)
+        data_dir = Path(self.user_data_dir)
+        data_dir.mkdir(parents=True, exist_ok=True)
+        self.store = Store(str(data_dir / DB_NAME))
 
         sm = ScreenManager()
         self.root_sm = sm
