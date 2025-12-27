@@ -20,8 +20,8 @@ jobs:
 
       - name: Install Buildozer
         run: |
-          pip3 install --upgrade pip
-          pip3 install buildozer cython==0.29.36
+          python3 -m pip install --upgrade pip setuptools wheel
+          python3 -m pip install --upgrade buildozer cython==0.29.36
 
       - name: Build APK
         run: yes |
