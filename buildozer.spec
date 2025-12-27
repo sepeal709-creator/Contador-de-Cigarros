@@ -15,6 +15,8 @@ android.api = 33
 android.permissions =
 android.archs = arm64-v8a,armeabi-v7a
 
+android.accept_sdk_license = True
+
 [buildozer]
 log_level = 2
 warn_on_root = 1
